@@ -1,0 +1,37 @@
+Se eligió un cojnuto de datos que representa las siguientes variables:
+-Horas de Estudio
+-Promedio_Notas
+-Aprobado (0 = NO, 1 = SI) 
+
+Pormedio de Support Vector Machine
+Hacemos la prediccion de un resultado con los siguientes datos
+Ejemplo: Horas de Estudio = 9, Promedio = 60.5
+
+Resultado: Predicción para 9 horas de estudio y con un promedio de 60.5: [0]
+Significa que esa perosna No aprobara
+
+Por medio del uso de la matriz de confusión obtenemos 
+[[31 11]  TN   FP
+[11 22]]  FN   TP
+TN (Verdaderos Negativos) = 31 Casos que eran realmente negativos (clase "0") y el modelo los predijo correctamente como negativos.
+FP (Falsos Positivos) = 11 Casos que eran realmente negativos, pero el modelo los predijo incorrectamente como positivos (falsa alarma).
+FN (Falsos Negativos) = 11 Casos que eran realmente positivos, pero el modelo los predijo incorrectamente como negativos (se le escapó un positivo).
+TP (Verdaderos Positivos) = 22 Casos que eran realmente positivos (clase "1") y el modelo los predijo correctamente como positivos.
+
+Accuracy: 
+a+d / a+b+c+d
+TP + TN / TP + TN + FP + FN
+
+31+22/31+11+11+22 -> 53/75 ≈ 0.7067 de precisión
+*Precision muy baja para un modelo
+
+
+Epsilon:
+b+c / a+b+c+d
+FP + FN / TP + TN + FP + FN
+11+11/ 31+11+11+22 ->  22/75 ≈ 0,29
+*El algoritmo comete el error en aproximadamente 29% de los casos con el Dataset
+
+Resumen:
+Tiene una precisión baja este modelo, capaz por los datos que son con decimales.
+Y comete 29% de errores al usar support vector machine para predecir los valores.
